@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './views/Home';
+import Shop from './views/Shop';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (props) => {
+  const [snakes, setSnakes] = useState(['ball python', 'anaconda', 'viper', 'rattlesnake']);  
+
+  
+return (
+  <div className="App">
+    <Navbar />
+    <Switch />
+      <Route exact path='/' render={() => <Home title={'Snakes -Home'} snakes={snakes} setSnakes={setSnakes} />} />
+      <Route exact path='/shop' render={() => <Shop title={'Snakes - Shop'} />} />
+    <Switch />
+  </div>
+);
+};
 
 export default App;
