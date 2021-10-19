@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  /* background-image: url("/src/static/images/clown1.jpg"); */
+  /* position: fixed;  */
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position:center ;
+  /* background-repeat: no-repeat; */
+  /* background-size:100%; */
 }
 
 .App-logo {
